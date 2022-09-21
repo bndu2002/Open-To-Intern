@@ -1,10 +1,14 @@
 const express = require('express');
 const route = require('./routes/route.js');
 const  mongoose = require('mongoose');
+const multer = require('multer')
 const app = express();
-const PORT=process.env.PORT||3000
+const PORT=process.env.PORT||3001
 
 app.use(express.json());
+
+//application level middleware to accept all kind of data in the request body
+app.use(multer().any)
 
 
 

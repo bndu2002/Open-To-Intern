@@ -4,7 +4,9 @@ const internModel = require("../models/internModel")
 const{isValidName , isValidRequestBody , isPresent , isValidMail ,isValidNumber} = require('../validator/validator')
 
 const createIntern = async function(req,res){
-try {
+   
+    res.setHeader('Access-Control-Allow-Origin','*')
+    try {
     let {name,mobile,email,collegeName,isDeleted} = req.body
     
     if(!isValidRequestBody(req.body))return res.status(400).send({status:false,msg:"No Input"})

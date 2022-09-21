@@ -38,6 +38,9 @@ const createCollege= async function(req,res){
 }
 
 const getCollegDetails = async function(req,res){
+   
+    //setting a header in response so the resources are open to all '*'
+  // res.setHeader('Access-Control-Allow-Origin','*')
     try {
         let data = req.query
        
